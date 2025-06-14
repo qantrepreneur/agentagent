@@ -1,30 +1,29 @@
 {
-  "name": "server",
+  "name": "@agentagent/server",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "db:push": "prisma db push --schema ./prisma/schema",
-    "db:studio": "prisma studio",
-    "db:generate": "prisma generate --schema ./prisma/schema",
-    "db:migrate": "prisma migrate dev"
+    "start": "next start"
   },
   "dependencies": {
-    "next": "15.3.0",
-    "dotenv": "^16.5.0",
-    "@trpc/server": "^11.0.0",
-    "@trpc/client": "^11.0.0",
-    "@prisma/client": "^6.9.0",
-    "ai": "^4.3.16",
+    "@agentagent/prisma": "workspace:*",
     "@ai-sdk/google": "^1.2.3",
-    "better-auth": "^1.2.9"
+    "@prisma/client": "^6.9.0",
+    "@t3-oss/env-nextjs": "^0.13.8",
+    "@trpc/client": "^11.0.0",
+    "@trpc/server": "^11.0.0",
+    "ai": "^4.3.16",
+    "better-auth": "^1.2.9",
+    "next": "15.3.0",
+    "zod": "^3.25.64"
   },
   "devDependencies": {
+    "@agentagent/config-typescript": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^19",
-    "typescript": "^5",
-    "prisma": "^6.9.0"
+    "prisma": "^6.9.0",
+    "typescript": "^5"
   }
 }

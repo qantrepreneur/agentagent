@@ -1,38 +1,76 @@
 {
-	"$schema": "https://turbo.build/schema.json",
-	"ui": "tui",
-	"tasks": {
-		"build": {
-			"dependsOn": ["^build"],
-			"inputs": ["$TURBO_DEFAULT$", ".env*"],
-			"outputs": ["dist/**"]
-		},
-		"lint": {
-			"dependsOn": ["^lint"]
-		},
-		"check-types": {
-			"dependsOn": ["^check-types"]
-		},
-		"dev": {
-			"cache": false,
-			"persistent": true
-		},
-		"db:push": {
-			"cache": false,
-			"persistent": true
-		},
-		"db:studio": {
-			"cache": false,
-			"persistent": true
-		},
-		"db:migrate": {
-			"cache": false,
-			"persistent": true
-		},
-		"db:generate": {
-			"cache": false,
-			"persistent": true
-		}
-		
-	}
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "globalEnv": ["DATABASE_URL", "DATABASE_USERNAME", "DATABASE_PASSWORD"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^db:generate", "^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["dist/**"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["^db:generate", "db:start"]
+    },
+    "@agentagent/server#dev": {
+      "env": [
+        "CORS_ORIGIN",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "GOOGLE_GENERATIVE_AI_API_KEY",
+        "DATABASE_URL",
+        "DATABASE_USERNAME",
+        "DATABASE_PASSWORD"
+      ]
+    },
+    "@agentagent/web#dev": {
+      "env": ["NEXT_PUBLIC_SERVER_URL"]
+    },
+    "@agentagent/prisma#db:start": {
+      "env": ["DATABASE_URL", "DATABASE_USERNAME", "DATABASE_PASSWORD"]
+    },
+    "@agentagent/prisma#db:generate": {
+      "env": ["DATABASE_URL", "DATABASE_USERNAME", "DATABASE_PASSWORD"]
+    },
+    "@agentagent/prisma#db:push": {
+      "env": ["DATABASE_URL", "DATABASE_USERNAME", "DATABASE_PASSWORD"]
+    },
+    "@agentagent/prisma#db:migrate": {
+      "env": ["DATABASE_URL", "DATABASE_USERNAME", "DATABASE_PASSWORD"]
+    },
+    "@agentagent/prisma#db:studio": {
+      "env": ["DATABASE_URL", "DATABASE_USERNAME", "DATABASE_PASSWORD"]
+    },
+    "test": {
+      "cache": false,
+      "persistent": true
+    },
+    "db:start": {
+      "cache": false,
+      "persistent": true
+    },
+    "db:push": {
+      "cache": false,
+      "persistent": true
+    },
+    "db:studio": {
+      "cache": false,
+      "persistent": true
+    },
+    "db:migrate": {
+      "cache": false,
+      "persistent": true
+    },
+    "db:generate": {
+      "cache": false,
+      "persistent": true
+    }
+  }
 }

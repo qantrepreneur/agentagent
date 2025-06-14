@@ -1,0 +1,3 @@
+{
+  "extends": "@agentagent/config-typescript/base.json"
+}

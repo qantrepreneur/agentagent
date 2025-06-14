@@ -6,19 +6,21 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
+    "with-env": "dotenv -e ./.env --",
+    "dev": "pnpm with-env turbo db:generate db:start dev",
+    "build": "turbo db:generate build",
+    "test": "pnpm with-env turbo test",
     "check-types": "turbo check-types",
-    "dev:native": "turbo -F native dev",
-    "dev:web": "turbo -F web dev",
-    "dev:server": "turbo -F server dev",
-    "db:push": "turbo -F server db:push",
-    "db:studio": "turbo -F server db:studio",
-    "db:generate": "turbo -F server db:generate",
-    "db:migrate": "turbo -F server db:migrate"
+    "dev:web": "pnpm with-env turbo -F @agentagent/web dev",
+    "dev:server": "pnpm with-env turbo -F @agentagent/server dev",
+    "db:start": "pnpm with-env turbo -F @agentagent/prisma db:start",
+    "db:push": "pnpm with-env turbo -F @agentagent/prisma db:push",
+    "db:studio": "pnpm with-env turbo -F @agentagent/prisma db:studio",
+    "db:generate": "pnpm with-env turbo -F @agentagent/prisma db:generate",
+    "db:migrate": "pnpm with-env turbo -F @agentagent/prisma db:migrate"
   },
-  "dependencies": {},
   "devDependencies": {
+    "dotenv-cli": "^8.0.0",
     "turbo": "^2.5.4"
   },
   "packageManager": "pnpm@10.12.1"
