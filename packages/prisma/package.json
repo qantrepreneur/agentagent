@@ -22,7 +22,6 @@
     "@agentagent/config-typescript": "workspace:*",
     "@agentagent/config-eslint": "workspace:*",
     "@types/node": "^20",
-    "@types/react": "^19",
     "prisma": "^6.9.0"
   }
 }
