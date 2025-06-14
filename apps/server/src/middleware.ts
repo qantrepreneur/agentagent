@@ -9,7 +9,7 @@ export function middleware() {
   res.headers.append("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
   res.headers.append(
     "Access-Control-Allow-Headers",
-    "Content-Type, Authorization"
+    "Content-Type, Authorization",
   );
 
   return res;

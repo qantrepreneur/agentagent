@@ -16,11 +16,13 @@
     "@trpc/server": "^11.0.0",
     "ai": "^4.3.16",
     "better-auth": "^1.2.9",
+    "eslint": "^9.29.0",
     "next": "15.3.0",
     "zod": "^3.25.64"
   },
   "devDependencies": {
     "@agentagent/config-typescript": "workspace:*",
+    "@agentagent/config-eslint": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^19",
     "prisma": "^6.9.0",

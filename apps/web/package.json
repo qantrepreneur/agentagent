@@ -21,6 +21,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "env": "^0.0.2",
+    "eslint": "^9.29.0",
     "lucide-react": "^0.487.0",
     "next": "15.3.0",
     "next-themes": "^0.4.6",
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "@agentagent/config-typescript": "workspace:*",
+    "@agentagent/config-eslint": "workspace:*",
     "@tailwindcss/postcss": "^4",
     "@tanstack/react-query-devtools": "^5.80.5",
     "@types/node": "^20",
