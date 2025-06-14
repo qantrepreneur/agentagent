@@ -8,7 +8,7 @@ root = true
 end_of_line = lf
 insert_final_newline = true
 
-[*.{ts,tsx,json,md,js,jsx}]
+[*.{ts,tsx,md,js,jsx,json}]
 charset = utf-8
 indent_style = space
 indent_size = 2

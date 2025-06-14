@@ -22,7 +22,7 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "**/*": "format"
+    "**/*.{ts,tsx,md,js,jsx,json}": "prettier --write"
   },
   "devDependencies": {
     "dotenv-cli": "^8.0.0",
