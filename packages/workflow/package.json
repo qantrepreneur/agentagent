@@ -1,0 +1,21 @@
+{
+  "name": "@agentagent/workflow",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Add dev script here'",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'"
+  },
+  "dependencies": {
+    "eslint": "^9.29.0",
+    "zod": "^3.25.64"
+  },
+  "devDependencies": {
+    "@agentagent/config-typescript": "workspace:*",
+    "@agentagent/config-eslint": "workspace:*",
+    "@types/node": "^20",
+    "prisma": "^6.9.0"
+  }
+}

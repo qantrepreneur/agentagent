@@ -247,14 +247,31 @@ importers:
       '@types/node':
         specifier: ^20
         version: 20.19.0
-      '@types/react':
-        specifier: ^19
-        version: 19.1.8
       prisma:
         specifier: ^6.9.0
         version: 6.9.0(typescript@5.8.3)
 
-  packages/workflow: {}
+  packages/workflow:
+    dependencies:
+      eslint:
+        specifier: ^9.29.0
+        version: 9.29.0(jiti@2.4.2)
+      zod:
+        specifier: ^3.25.64
+        version: 3.25.64
+    devDependencies:
+      '@agentagent/config-eslint':
+        specifier: workspace:*
+        version: link:../config-eslint
+      '@agentagent/config-typescript':
+        specifier: workspace:*
+        version: link:../config-typescript
+      '@types/node':
+        specifier: ^20
+        version: 20.19.0
+      prisma:
+        specifier: ^6.9.0
+        version: 6.9.0(typescript@5.8.3)
 
 packages:
 
