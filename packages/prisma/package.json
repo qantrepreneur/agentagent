@@ -17,10 +17,12 @@
     "@t3-oss/env-core": "^0.13.8",
     "dotenv": "^16.5.0",
     "dotenv-expand": "^12.0.2",
+    "eslint": "^9.29.0",
     "zod": "^3.25.64"
   },
   "devDependencies": {
     "@agentagent/config-typescript": "workspace:*",
+    "@agentagent/config-eslint": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^19",
     "prisma": "^6.9.0"

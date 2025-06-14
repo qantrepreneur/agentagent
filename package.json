@@ -1,5 +1,5 @@
 {
-  "name": "agentagent",
+  "name": "@agentagent",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -17,10 +17,18 @@
     "db:push": "pnpm with-env turbo -F @agentagent/prisma db:push",
     "db:studio": "pnpm with-env turbo -F @agentagent/prisma db:studio",
     "db:generate": "pnpm with-env turbo -F @agentagent/prisma db:generate",
-    "db:migrate": "pnpm with-env turbo -F @agentagent/prisma db:migrate"
+    "db:migrate": "pnpm with-env turbo -F @agentagent/prisma db:migrate",
+    "format": "prettier --ignore-unknown --write \"**/*.{ts,tsx,md,js,jsx,json}\"",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*": "format"
   },
   "devDependencies": {
     "dotenv-cli": "^8.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.1",
+    "prettier": "^3.5.3",
     "turbo": "^2.5.4"
   },
   "packageManager": "pnpm@10.12.1"
