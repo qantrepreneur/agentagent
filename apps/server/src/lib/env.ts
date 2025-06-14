@@ -6,7 +6,7 @@ const env = createEnv({
     CORS_ORIGIN: z.string().nonempty(),
     BETTER_AUTH_SECRET: z.string().nonempty(),
     BETTER_AUTH_URL: z.string().nonempty(),
-    GOOGLE_GENERATIVE_AI_API_KEY: z.string().optional(),
+    OPENROUTER_API_KEY: z.string().nonempty(),
   },
   experimental__runtimeEnv: process.env,
 });
