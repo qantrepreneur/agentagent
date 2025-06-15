@@ -2,6 +2,9 @@
   "name": "@agentagent/workflow",
   "version": "0.0.0",
   "private": true,
+  "exports": {
+    "./nodes/*": "./src/nodes/*.ts"
+  },
   "scripts": {
     "dev": "echo 'Add dev script here'",
     "build": "echo 'Add build script here'",

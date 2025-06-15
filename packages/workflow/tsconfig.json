@@ -1,3 +1,10 @@
 {
-  "extends": "@agentagent/config-typescript/base.json"
+  "extends": "@agentagent/config-typescript/base.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
 }
